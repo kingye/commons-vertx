@@ -1,6 +1,5 @@
 package com.genie.commons.vertx.postgresql;
 
-import com.genie.commons.vertx.JdbcHelper;
 
 import org.postgresql.util.PGobject;
 import org.vertx.java.core.json.JsonObject;
@@ -15,12 +14,8 @@ import java.util.Properties;
 /**
  * Created by d032459 on 15/1/2.
  */
-public abstract class PostgreSQLHelper<T> extends JdbcHelper<T> {
-    @Override
-    public Connection createConnection(JsonObject jdbcConf) throws SQLException, ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
-        return super.createConnection(jdbcConf);
-    }
+public class PostgreSQLHelper {
+
 
 
     public Object toJdbcValue(JsonObject json) throws SQLException {
